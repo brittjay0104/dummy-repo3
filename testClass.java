@@ -285,7 +285,6 @@ public class CDL {
             for (int i = 0; i < 10; i++) 
             {
                // do something   
-            	java.util.List<String> a = java.util.Collections.emptyList();
             	
             	Optional<Integer> possible = Optional.of(5);
             	possible.isPresent(); // returns true
