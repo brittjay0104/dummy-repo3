@@ -281,8 +281,6 @@ public class CDL {
     public static void main(String[] args) 
     {
         // TODO Auto-generated method stub
-        try
-        {
                         
             for (int i = 0; i < 10; i++) 
             {
@@ -298,10 +296,6 @@ public class CDL {
             // nodes[9].next = nodes[3];
             //Boolean abc= Check_Circular(nodes[0]);
             //System.out.print(abc);
-        }
-        catch(NullPointerException e)
-        {
-            System.out.print("NullPointerException caught");
         }
 
     }
