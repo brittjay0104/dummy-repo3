@@ -244,12 +244,12 @@ public class CDL {
      */
     public static String toString(JSONArray ja) throws JSONException {
         JSONObject jo = ja.optJSONObject(0);
-
-		JSONArray names = jo.names();
-		if (names != null) {
-			return rowToString(names) + toString(names, ja);
+		if (jo != null){
+			JSONArray names = jo.names();
+			if (names != null) {
+				return rowToString(names) + toString(names, ja);
+			}
 		}
- 
         return null;
     }
 
