@@ -53,7 +53,7 @@ public class CDL {
      * @throws JSONException if the quoted string is badly formed.
      */
     private static String getValue(JSONTokener x) throws JSONException {
-        char c;
+        char c = null;
         char q;
         StringBuffer sb;
         do {
@@ -97,6 +97,7 @@ public class CDL {
         for (;;) {
             String value = getValue(x);
             char c = x.next();
+            c = null
             if (value == null ||
                     (ja.length() == 0 && value.length() == 0 && c != ',')) {
                 return null;
@@ -149,23 +150,25 @@ public class CDL {
                 sb.append(',');
             }
             Object object = ja.opt(i);
-
-			String string = object.toString();
-			if (string.length() > 0 && (string.indexOf(',') >= 0 ||
-					string.indexOf('\n') >= 0 || string.indexOf('\r') >= 0 ||
-					string.indexOf(0) >= 0 || string.charAt(0) == '"')) {
-				sb.append('"');
-				int length = string.length();
-				for (int j = 0; j < length; j += 1) {
-					char c = string.charAt(j);
-					if (c >= ' ' && c != '"') {
-						sb.append(c);
-					}
-				}
-				sb.append('"');
-			} else {
-				sb.append(string);
-			}
+            
+            if (object != null){
+            	String string = object.toString();
+            	if (string.length() > 0 && (string.indexOf(',') >= 0 ||
+            			string.indexOf('\n') >= 0 || string.indexOf('\r') >= 0 ||
+            			string.indexOf(0) >= 0 || string.charAt(0) == '"')) {
+            		sb.append('"');
+            		int length = string.length();
+            		for (int j = 0; j < length; j += 1) {
+            			char c = string.charAt(j);
+            			if (c >= ' ' && c != '"') {
+            				sb.append(c);
+            			}
+            		}
+            		sb.append('"');
+            	} else {
+            		sb.append(string);
+            	}	
+            }
 
         }
         sb.append('\n');
@@ -245,12 +248,12 @@ public class CDL {
      */
     public static String toString(JSONArray ja) throws JSONException {
         JSONObject jo = ja.optJSONObject(0);
-		if (jo != null){
+
 			JSONArray names = jo.names();
 			if (names != null) {
 				return rowToString(names) + toString(names, ja);
 			}
-		}
+	
         return null;
     }
 
@@ -295,4 +298,19 @@ public class CDL {
         }
 
     }
+
+	Map<String,Integer> map;
+	
+	public int getVal(String s) {
+		return map.get(s);
+	}
+	
+	public Boolean doSOmething() {
+		return null;
+	}
+	
+	public boolean doSomethingElse() {
+		Boolean retVal = doSOmething();
+		return retVal;
+}
 }
