@@ -138,6 +138,7 @@ public class CDL {
      * Produce a comma delimited text row from a JSONArray. Values containing
      * the comma character will be quoted. Troublesome characters may be
      * removed.
+	 * adding another commit with a comment
      * @param ja A JSONArray of strings.
      * @return A string ending in NEWLINE.
      */
@@ -275,5 +276,28 @@ public class CDL {
             }
         }
         return sb.toString();
+    }
+    
+    public static void main(String[] args) 
+    {
+        // TODO Auto-generated method stub
+        try
+        {
+                        
+            for (int i = 0; i < 10; i++) 
+            {
+               // do something          
+            }
+
+            // Create loop;
+            // nodes[9].next = nodes[3];
+            //Boolean abc= Check_Circular(nodes[0]);
+            //System.out.print(abc);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.print("NullPointerException caught");
+        }
+
     }
 }
