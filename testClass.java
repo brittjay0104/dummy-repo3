@@ -148,24 +148,24 @@ public class CDL {
                 sb.append(',');
             }
             Object object = ja.opt(i);
-            if (object != null) {
-                String string = object.toString();
-                if (string.length() > 0 && (string.indexOf(',') >= 0 ||
-                        string.indexOf('\n') >= 0 || string.indexOf('\r') >= 0 ||
-                        string.indexOf(0) >= 0 || string.charAt(0) == '"')) {
-                    sb.append('"');
-                    int length = string.length();
-                    for (int j = 0; j < length; j += 1) {
-                        char c = string.charAt(j);
-                        if (c >= ' ' && c != '"') {
-                            sb.append(c);
-                        }
-                    }
-                    sb.append('"');
-                } else {
-                    sb.append(string);
-                }
-            }
+
+			String string = object.toString();
+			if (string.length() > 0 && (string.indexOf(',') >= 0 ||
+					string.indexOf('\n') >= 0 || string.indexOf('\r') >= 0 ||
+					string.indexOf(0) >= 0 || string.charAt(0) == '"')) {
+				sb.append('"');
+				int length = string.length();
+				for (int j = 0; j < length; j += 1) {
+					char c = string.charAt(j);
+					if (c >= ' ' && c != '"') {
+						sb.append(c);
+					}
+				}
+				sb.append('"');
+			} else {
+				sb.append(string);
+			}
+
         }
         sb.append('\n');
         return sb.toString();
