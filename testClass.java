@@ -288,6 +288,10 @@ public class CDL {
             {
                // do something   
             	java.util.List<String> a = java.util.Collections.emptyList();
+            	
+            	Optional<Integer> possible = Optional.of(5);
+            	possible.isPresent(); // returns true
+            	possible.get(); // returns 5
             }
 
             // Create loop;
