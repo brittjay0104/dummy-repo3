@@ -6,7 +6,7 @@ public class Test {
 
 			String s = "Hello World";
 		}
-		catch (NullPointerException){
+		catch (NullPointerException e){
 			System.out.println("NullPointerException found!")
 		}
 	}
