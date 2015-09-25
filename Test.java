@@ -4,7 +4,7 @@ public class Test {
 
 		try {
 
-			//do something
+			String s = "Hello World";
 		}
 		catch (NullPointerException){
 			System.out.println("NullPointerException found!")
