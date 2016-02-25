@@ -12,7 +12,7 @@ public class Box<T> {
   }
   
   public <T> void method(T item){
-	  List<T> list = new ArrayList<T>();
+	  List<T> list = Collections.emptyList();
   }
   
   // determines the largest of three Comparable objects
