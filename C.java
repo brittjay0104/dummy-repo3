@@ -4,5 +4,12 @@ public class C extends RuntimeException {
 		throw new Exception e;
 	}
 
-	
+	public void catchThis() {
+		try {
+			exceptionTest();
+		}
+		catch (RuntimeException e) {
+			
+		}
+	}
 }
