@@ -12,6 +12,23 @@ public class C extends RuntimeException {
 			
 		}
 	}
+	
+	static 
+	{
+		List list = new ArrayList();
+		list.add(3);
+		list.add(5);
+		list.add(0);
+		
+	    try
+	    {
+	    	System.out.println("A list element is: "+list.get(5));
+	    }
+	    catch (IndexOutOfBoundsException e)
+	    {
+	        //log
+	    }
+	}
 
 	static String readFirstLineFromFile(String path) throws IOException {
     	try (BufferedReader br =
